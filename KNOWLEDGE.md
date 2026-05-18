@@ -15,11 +15,13 @@ Location: Ludhiana, Punjab, India
 - **Client Reviews**: 50+ (paginated, 5 per page)
 
 ## Design System
-- **Skill**: Futuristic (from typeui.sh registry) — see `.opencode/skills/design-system/SKILL.md`
-- **Fonts**: Audiowide (display/headings), Roboto (body), Anonymous Pro (mono)
-- **Colors**: Primary #3B82F6, Secondary #8B5CF6, Success #16A34A, Warning #D97706, Danger #DC2626, Surface #FFFFFF, Text #111827
-- **Spacing scale**: 4/8/12/16/24/32 (tokenized as --space-*)
-- **Radius**: 4px/8px/12px/16px/100px (tokenized as --radius-*)
+- **Skill**: Custom (user-edited) — see `.opencode/skills/design-system/SKILL.md`
+  - Direction: Bold, distinctive, asymmetric, textured, scroll-animated
+  - Avoid generic fonts, predictable gradients, cookie-cutter components
+- **Fonts**: DM Serif Display (display/headings — italic), Inter (body), JetBrains Mono (mono)
+- **Colors**: Accent Gold #D4A853, Secondary Red #CD5C5C, Dark #0A0A0A, Surface #F5F0EB
+- **Spacing**: 4/8/12/16/24/32/48 via --space-* tokens
+- **Noise overlay**: SVG fractal noise at 3.5% opacity
 
 ## Tech Stack
 - Pure HTML + CSS + JavaScript (static site, no build step)
