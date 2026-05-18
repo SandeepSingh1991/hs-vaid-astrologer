@@ -124,7 +124,7 @@ ul{list-style:none}
 .hero-inner{
   max-width:1200px;margin:0 auto;padding:0 24px;width:100%;
   position:relative;z-index:2;
-  display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center
+  display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:stretch
 }
 .hero-content{max-width:600px}
 .hero-label{
@@ -161,34 +161,34 @@ ul{list-style:none}
 @keyframes scrl{0%{opacity:1;transform:translateX(-50%) translateY(0)}80%{opacity:0;transform:translateX(-50%) translateY(10px)}100%{opacity:0}}
 
 /* Hero Brand Panel */
-.hero-brand{display:flex;align-items:center;justify-content:center}
+.hero-brand{display:flex;width:100%}
 .hero-brand-inner{
-  text-align:center;position:relative;overflow:hidden;
+  text-align:center;position:relative;overflow:hidden;width:100%;
   background-image:url('backdrop.png');background-size:cover;background-position:center;
-  min-height:360px;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;padding:32px 28px;
+  min-height:520px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:48px 36px;
   border:1px solid rgba(212,168,83,.2);
-  box-shadow:0 0 30px rgba(212,168,83,.08),inset 0 0 40px rgba(0,0,0,.3)
+  box-shadow:0 0 40px rgba(212,168,83,.1),inset 0 0 60px rgba(0,0,0,.4)
 }
 .hero-brand-inner::before{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 25%,rgba(10,10,10,.85) 100%);
+  background:linear-gradient(180deg,transparent 20%,rgba(10,10,10,.9) 100%);
   pointer-events:none
 }
 .hero-brand-corner{position:absolute;width:10px;height:10px;border-color:var(--gold);border-style:solid;z-index:2}
 .hero-brand-corner-tl{top:-1px;left:-1px;border-width:2px 0 0 2px}
 .hero-brand-corner-br{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
 .hero-brand-content{position:relative;z-index:1}
-.hero-brand-rudraksh{width:44px;height:66px;display:block;margin:0 auto 12px;filter:drop-shadow(0 2px 16px rgba(212,168,83,.2))}
+.hero-brand-rudraksh{width:56px;height:84px;display:block;margin:0 auto 16px;filter:drop-shadow(0 4px 20px rgba(212,168,83,.25))}
 .hero-brand-star{display:block;font-size:3rem;color:var(--gold);opacity:.25;margin-bottom:12px;line-height:1}
-.hero-brand-line{display:block;width:30px;height:1px;background:var(--gold);margin:12px auto;opacity:.2}
+.hero-brand-line{display:block;width:40px;height:1.5px;background:var(--gold);margin:16px auto;opacity:.25}
 .hero-brand-tag{
-  font-family:var(--font-mono);font-size:.6rem;letter-spacing:4px;
-  color:var(--mute);line-height:1.6;display:block
+  font-family:var(--font-mono);font-size:.75rem;letter-spacing:5px;
+  color:var(--lite);line-height:1.6;display:block;font-weight:600
 }
 .hero-brand-small{
-  font-family:var(--font-mono);font-size:.55rem;letter-spacing:3px;
-  color:var(--gold);opacity:.4;display:block
+  font-family:var(--font-mono);font-size:.65rem;letter-spacing:3px;
+  color:var(--gold);opacity:.5;display:block
 }
 
 /* Buttons */
