@@ -2,9 +2,9 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>HS Vaid — Red Book Expert | ज्योतिषी</title>
-  <meta name="description" content="HS Vaid - प्रसिद्ध रेड बुक एक्सपर्ट ज्योतिषी। 1000+ केस सॉल्व। लुधियाना, पंजाब में स्थित।">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HS Vaid — Red Book Expert</title>
+  <meta name="description" content="HS Vaid — प्रसिद्ध रेड बुक एक्सपर्ट। 1000+ केस सॉल्व। लुधियाना, पंजाब।">
   <meta name="theme-color" content="#0A0A0A">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,18 +16,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="noise-overlay" aria-hidden="true"></div>
-  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <a href="#main" class="skip-link" data-i18n="skip_link">मुख्य सामग्री पर जाएं</a>
+  <a href="#main" class="skip" data-i18n="skip">मुख्य सामग्री पर जाएं</a>
 
-  <header class="navbar" id="navbar" role="banner">
-    <div class="container nav-container">
-      <a href="#" class="nav-logo" aria-label="HS Vaid होम">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        <span class="logo-text">HS <em>Vaid</em></span>
+  <header class="bar" id="bar" role="banner">
+    <div class="bar-inner">
+      <a href="#" class="bar-logo" aria-label="HS Vaid होम">
+        <span class="bar-star" aria-hidden="true">✦</span>
+        <span class="bar-name">HS <em>Vaid</em></span>
       </a>
-      <nav class="nav-links" id="navLinks" role="navigation" aria-label="मुख्य नेविगेशन">
+      <nav class="bar-nav" id="barNav" role="navigation" aria-label="नेविगेशन">
         <ul>
           <li><a href="#home" class="active" data-i18n="nav_home">होम</a></li>
           <li><a href="#about" data-i18n="nav_about">परिचय</a></li>
@@ -36,9 +35,9 @@
           <li><a href="#contact" data-i18n="nav_contact">संपर्क</a></li>
         </ul>
       </nav>
-      <div class="nav-actions">
-        <button class="lang-toggle" id="langToggle" title="English" aria-label="भाषा बदलें">EN</button>
-        <button class="nav-toggle" id="navToggle" aria-label="मेन्यू टॉगल" aria-expanded="false">
+      <div class="bar-actions">
+        <button class="lang" id="langBtn" title="English" aria-label="भाषा बदलें">EN</button>
+        <button class="ham" id="hamBtn" aria-label="मेन्यू" aria-expanded="false">
           <span></span><span></span>
         </button>
       </div>
@@ -46,166 +45,160 @@
   </header>
 
   <main id="main">
+    <!-- Hero -->
     <section class="hero" id="home">
       <div class="hero-bg" aria-hidden="true">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+        <div class="hero-dot" style="top:12%;left:8%"></div>
+        <div class="hero-dot" style="top:25%;right:15%"></div>
+        <div class="hero-dot" style="bottom:30%;left:12%"></div>
+        <div class="hero-dot" style="bottom:20%;right:10%"></div>
+        <div class="hero-dot" style="top:50%;left:50%"></div>
       </div>
-      <div class="scroll-indicator" aria-hidden="true">
-        <span></span>
-      </div>
-      <div class="container hero-container">
-        <div class="hero-badge reveal" data-i18n="hero_badge">रेड बुक एक्सपर्ट</div>
-        <h1 class="hero-title">
-          <span class="title-sub reveal" data-i18n="hero_title_sub" style="transition-delay:0.1s">ज्योतिषी</span>
-          <span class="title-main reveal" style="transition-delay:0.2s">HS&nbsp;Vaid</span>
-        </h1>
-        <p class="hero-desc reveal" data-i18n="hero_desc" style="transition-delay:0.3s">1000+ सफल केसों के साथ एक विश्वसनीय ज्योतिषीय समाधान। आपकी हर समस्या का समाधान रेड बुक के माध्यम से।</p>
-        <div class="hero-stats reveal" style="transition-delay:0.4s">
-          <div class="stat-item">
-            <span class="stat-number" data-count="1000" role="text">0</span><span class="stat-plus">+</span>
-            <span class="stat-label" data-i18n="stat_cases">केस सॉल्व</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="50" role="text">0</span><span class="stat-plus">+</span>
-            <span class="stat-label" data-i18n="stat_clients">संतुष्ट ग्राहक</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="15" role="text">0</span><span class="stat-plus">+</span>
-            <span class="stat-label" data-i18n="stat_years">साल का अनुभव</span>
-          </div>
-        </div>
-        <div class="hero-actions reveal" style="transition-delay:0.5s">
-          <a href="tel:+919915990088" class="btn btn-primary" aria-label="कॉल करें +91 99159 90088">
-            <i class="fas fa-phone-alt" aria-hidden="true"></i> <span data-i18n="call_now">कॉल करें</span>
-          </a>
-          <a href="https://wa.me/919915990088" target="_blank" rel="noopener" class="btn btn-outline" aria-label="व्हाट्सएप +91 99159 90088">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="whatsapp">व्हाट्सएप</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about section" id="about" aria-labelledby="about-title">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-content">
-            <span class="section-tag reveal" data-i18n="about_tag">परिचय</span>
-            <h2 class="section-title reveal" id="about-title" data-i18n="about_title">जानिए<br>हमारे बारे में</h2>
-            <p class="about-text reveal" data-i18n="about_desc">HS Vaid एक प्रसिद्ध रेड बुक एक्सपर्ट हैं जिन्होंने 1000 से अधिक लोगों की जीवन समस्याओं का समाधान किया है।</p>
-            <div class="about-highlight reveal">
-              <span class="highlight-num">1000+</span>
-              <span class="highlight-label" data-i18n="about_highlight">केस सॉल्व</span>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-label" data-i18n="hero_label">/ रेड बुक एक्सपर्ट</p>
+          <h1 class="hero-title">HS<span class="hero-title-break" aria-hidden="true">·</span>Vaid</h1>
+          <p class="hero-sub" data-i18n="hero_sub">आपकी हर समस्या का समाधान</p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-num" data-count="1000">0</span><span class="hero-plus">+</span>
+              <span class="hero-lbl" data-i18n="hstat_cases">केस सॉल्व</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-num" data-count="15">0</span><span class="hero-plus">+</span>
+              <span class="hero-lbl" data-i18n="hstat_years">साल अनुभव</span>
             </div>
           </div>
-          <div class="about-cards">
-            <article class="about-card reveal" style="transition-delay:0.1s">
-              <div class="about-icon" aria-hidden="true"><i class="fas fa-book-open"></i></div>
-              <h3 data-i18n="about_card1_title">रेड बुक एक्सपर्ट</h3>
-              <p data-i18n="about_card1_desc">प्राचीन रेड बुक विधा के विशेषज्ञ, जो सटीक भविष्यवाणी और प्रभावी समाधान के लिए जाने जाते हैं।</p>
-            </article>
-            <article class="about-card reveal" style="transition-delay:0.2s">
-              <div class="about-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
-              <h3 data-i18n="about_card2_title">1000+ सफल केस</h3>
-              <p data-i18n="about_card2_desc">1000 से अधिक संतुष्ट ग्राहकों के साथ एक सिद्ध ट्रैक रिकॉर्ड। हर मामले को व्यक्तिगत रूप से संभाला जाता है।</p>
-            </article>
-            <article class="about-card reveal" style="transition-delay:0.3s">
-              <div class="about-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
-              <h3 data-i18n="about_card3_title">24x7 उपलब्ध</h3>
-              <p data-i18n="about_card3_desc">कॉल और व्हाट्सएप 24x7 उपलब्ध। कार्यालय समय: सुबह 11 बजे से शाम 6 बजे तक (सभी दिन)।</p>
-            </article>
+          <div class="hero-acts">
+            <a href="tel:+919915990088" class="btn btn-gold" aria-label="+91 99159 90088">
+              <i class="fas fa-phone-alt"></i> <span data-i18n="call">कॉल करें</span>
+            </a>
+            <a href="https://wa.me/919915990088" target="_blank" rel="noopener" class="btn btn-out">
+              <i class="fab fa-whatsapp"></i> <span data-i18n="wa">व्हाट्सएप</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-num" aria-hidden="true">15<span>+</span></div>
+        <div class="about-body">
+          <span class="tag" data-i18n="about_tag">परिचय</span>
+          <h2 class="ttl" data-i18n="about_ttl">सालों का अनुभव<br>आपकी सेवा में</h2>
+          <p class="about-txt" data-i18n="about_txt">HS Vaid एक प्रसिद्ध रेड बुक एक्सपर्ट हैं जिन्होंने 1000 से अधिक लोगों की जीवन समस्याओं का समाधान किया है। प्राचीन रेड बुक विधा के विशेषज्ञ, सटीक भविष्यवाणी और प्रभावी समाधान के लिए जाने जाते हैं।</p>
+          <div class="about-feats">
+            <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-i18n="afeat1">100% गोपनीय</span></div>
+            <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-i18n="afeat2">सटीक भविष्यवाणी</span></div>
+            <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-i18n="afeat3">प्रभावी उपाय</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="services section" id="services" aria-labelledby="services-title">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag" data-i18n="services_tag">सेवाएं</span>
-          <h2 class="section-title" id="services-title" data-i18n="services_title">हमारी विशेष सेवाएं</h2>
-        </div>
-        <div class="services-scroll">
-          <div class="services-track" id="servicesTrack">
-            <div class="service-item"><i class="fas fa-heart" aria-hidden="true"></i><span data-i18n="srv1">प्रेम संबंधी समस्याएं</span></div>
-            <div class="service-item"><i class="fas fa-handshake" aria-hidden="true"></i><span data-i18n="srv2">वैवाहिक जीवन समाधान</span></div>
-            <div class="service-item"><i class="fas fa-briefcase" aria-hidden="true"></i><span data-i18n="srv3">करियर एवं व्यापार</span></div>
-            <div class="service-item"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span data-i18n="srv4">शिक्षा एवं परीक्षा</span></div>
-            <div class="service-item"><i class="fas fa-home" aria-hidden="true"></i><span data-i18n="srv5">गृह क्लेश समाधान</span></div>
-            <div class="service-item"><i class="fas fa-coins" aria-hidden="true"></i><span data-i18n="srv6">आर्थिक समस्याएं</span></div>
-          </div>
-        </div>
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="services-head">
+        <span class="tag" data-i18n="srv_tag">सेवाएं</span>
+        <h2 class="ttl" data-i18n="srv_ttl">हमारी विशेष सेवाएं</h2>
+      </div>
+      <div class="srv-grid">
+        <article class="srv-card" style="--i:0">
+          <span class="srv-num" aria-hidden="true">01</span>
+          <i class="fas fa-heart"></i>
+          <h3 data-i18n="srv1">प्रेम संबंधी समस्याएं</h3>
+          <p data-i18n="srv1d">प्रेम जीवन में आ रही बाधाओं का समाधान।</p>
+        </article>
+        <article class="srv-card" style="--i:1">
+          <span class="srv-num" aria-hidden="true">02</span>
+          <i class="fas fa-handshake"></i>
+          <h3 data-i18n="srv2">वैवाहिक जीवन समाधान</h3>
+          <p data-i18n="srv2d">पति-पत्नी के रिश्ते में सुधार और खुशहाली।</p>
+        </article>
+        <article class="srv-card" style="--i:2">
+          <span class="srv-num" aria-hidden="true">03</span>
+          <i class="fas fa-briefcase"></i>
+          <h3 data-i18n="srv3">करियर एवं व्यापार</h3>
+          <p data-i18n="srv3d">नौकरी और व्यवसाय में सफलता के उपाय।</p>
+        </article>
+        <article class="srv-card" style="--i:3">
+          <span class="srv-num" aria-hidden="true">04</span>
+          <i class="fas fa-graduation-cap"></i>
+          <h3 data-i18n="srv4">शिक्षा एवं परीक्षा</h3>
+          <p data-i18n="srv4d">पढ़ाई में मन लगाने और सफलता के उपाय।</p>
+        </article>
+        <article class="srv-card" style="--i:4">
+          <span class="srv-num" aria-hidden="true">05</span>
+          <i class="fas fa-home"></i>
+          <h3 data-i18n="srv5">गृह क्लेश समाधान</h3>
+          <p data-i18n="srv5d">परिवार में शांति और सद्भाव के उपाय।</p>
+        </article>
+        <article class="srv-card" style="--i:5">
+          <span class="srv-num" aria-hidden="true">06</span>
+          <i class="fas fa-coins"></i>
+          <h3 data-i18n="srv6">आर्थिक समस्याएं</h3>
+          <p data-i18n="srv6d">कर्ज और आर्थिक परेशानियों का स्थायी समाधान।</p>
+        </article>
       </div>
     </section>
 
-    <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag" data-i18n="reviews_tag">समीक्षाएं</span>
-          <h2 class="section-title" id="reviews-title" data-i18n="reviews_title">हमारे संतुष्ट ग्राहक</h2>
-          <p class="section-desc" data-i18n="reviews_desc">50 से अधिक संतुष्ट ग्राहकों की समीक्षाएं। ये हैं उनमें से कुछ।</p>
-        </div>
-        <div class="reviews-container reveal" id="reviewsContainer">
-          <div class="reviews-grid" id="reviewsGrid" role="list"></div>
-          <nav class="reviews-pagination" id="reviewsPagination" role="navigation" aria-label="समीक्षा पृष्ठ"></nav>
-        </div>
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+      <div class="reviews-head">
+        <span class="tag" data-i18n="rev_tag">समीक्षाएं</span>
+        <h2 class="ttl" data-i18n="rev_ttl">ग्राहक क्या कहते हैं</h2>
       </div>
+      <div class="rev-track" id="revTrack" role="list">
+        <!-- filled by JS -->
+      </div>
+      <div class="rev-dots" id="revDots" role="tablist"></div>
     </section>
 
-    <section class="contact section" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag" data-i18n="contact_tag">संपर्क</span>
-          <h2 class="section-title" id="contact-title" data-i18n="contact_title">हमसे संपर्क करें</h2>
-          <p class="section-desc" data-i18n="contact_desc">आज ही संपर्क करें और अपनी समस्या का समाधान पाएं।</p>
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="contact-strip">
+        <div class="contact-strip-inner">
+          <span class="contact-strip-lbl" data-i18n="call_now_label">तुरंत संपर्क करें</span>
+          <a href="tel:+919915990088" class="contact-strip-num">+91-99159-90088</a>
         </div>
-        <div class="contact-grid reveal">
-          <div class="contact-info">
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
-              <div>
-                <h4 data-i18n="address_label">पता</h4>
-                <p>#2944, Phase 1, Dugri,<br>Ludhiana - 141013, Punjab, IN</p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
-              <div>
-                <h4 data-i18n="phone_label">फोन</h4>
-                <p><a href="tel:+919915990088" aria-label="+91 99159 90088 पर कॉल करें">+91-99159-90088</a></p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></div>
-              <div>
-                <h4>WhatsApp</h4>
-                <p><a href="https://wa.me/919915990088" target="_blank" rel="noopener" aria-label="व्हाट्सएप +91 99159 90088">+91-99159-90088</a></p>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
-              <div>
-                <h4 data-i18n="timing_label">कार्यालय समय</h4>
-                <p data-i18n="timing_value">सुबह 11 बजे से शाम 6 बजे तक (सभी दिन)</p>
-                <small class="timing-note" data-i18n="timing_note">कॉल और व्हाट्सएप 24x7 उपलब्ध</small>
-              </div>
+      </div>
+      <div class="contact-body">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4 data-i18n="addr_lbl">पता</h4>
+              <p>#2944, Phase 1, Dugri,<br>Ludhiana - 141013, Punjab</p>
             </div>
           </div>
-          <div class="contact-cta">
-            <div class="cta-card">
-              <div class="cta-glow" aria-hidden="true"></div>
-              <i class="fas fa-phone-volume" aria-hidden="true"></i>
-              <h3 data-i18n="cta_title">तुरंत संपर्क करें</h3>
-              <p data-i18n="cta_desc">अपनी समस्या का समाधान पाने के लिए आज ही कॉल या व्हाट्सएप करें।</p>
-              <div class="cta-buttons">
-                <a href="tel:+919915990088" class="btn btn-primary btn-lg" aria-label="+91 99159 90088 पर कॉल करें">
-                  <i class="fas fa-phone-alt" aria-hidden="true"></i> +91-99159-90088
-                </a>
-                <a href="https://wa.me/919915990088" target="_blank" rel="noopener" class="btn btn-outline btn-lg" aria-label="व्हाट्सएप पर संपर्क करें">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
-                </a>
-              </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h4 data-i18n="ph_lbl">फोन / WhatsApp</h4>
+              <p><a href="tel:+919915990088">+91-99159-90088</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4 data-i18n="time_lbl">समय</h4>
+              <p data-i18n="time_val">सुबह 11 बजे – शाम 6 बजे (सभी दिन)</p>
+              <small data-i18n="time_note">WhatsApp 24x7 उपलब्ध</small>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <div class="cta-box">
+            <i class="fas fa-phone-volume"></i>
+            <h3 data-i18n="cta_ttl">अभी कॉल करें</h3>
+            <p data-i18n="cta_txt">समस्या का समाधान पाने में देर न करें।</p>
+            <div class="cta-btns">
+              <a href="tel:+919915990088" class="btn btn-gold"><i class="fas fa-phone-alt"></i> +91-99159-90088</a>
+              <a href="https://wa.me/919915990088" target="_blank" rel="noopener" class="btn btn-out"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             </div>
           </div>
         </div>
@@ -213,39 +206,29 @@
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="logo-mark" aria-hidden="true">✦</span>
-          <span class="logo-text">HS <em>Vaid</em></span>
-        </div>
-        <p class="footer-tagline" data-i18n="footer_tagline">आपकी समस्या, हमारा समाधान। रेड बुक एक्सपर्ट HS Vaid के साथ जुड़ें।</p>
-        <div class="footer-social">
-          <a href="https://wa.me/919915990088" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-          <a href="tel:+919915990088" aria-label="Phone"><i class="fas fa-phone-alt" aria-hidden="true"></i></a>
-        </div>
+  <footer class="foot">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <span class="bar-star" aria-hidden="true">✦</span>
+        <span class="bar-name">HS <em>Vaid</em></span>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 HS Vaid. <span data-i18n="footer_rights">सर्वाधिकार सुरक्षित।</span></p>
+      <p class="foot-tag" data-i18n="foot_tag">आपकी समस्या, हमारा समाधान।</p>
+      <div class="foot-social">
+        <a href="https://wa.me/919915990088" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+919915990088" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
       </div>
+      <p class="foot-copy">&copy; 2026 HS Vaid. <span data-i18n="foot_rights">सर्वाधिकार सुरक्षित।</span></p>
     </div>
   </footer>
 
-  <div class="fab-container" id="fabContainer">
-    <a href="tel:+919915990088" class="fab fab-phone" aria-label="कॉल करें">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="https://wa.me/919915990088" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="व्हाट्सएप">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+  <div class="fab-box">
+    <a href="tel:+919915990088" class="fab fab-phone" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://wa.me/919915990088" target="_blank" rel="noopener" class="fab fab-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
 
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(() => {});
-      });
+      window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
     }
   </script>
   <script src="scripts.js" defer></script>
