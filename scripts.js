@@ -57,7 +57,8 @@
 
   const translations = {
     hi: {
-      nav_home: 'होम', nav_about: 'परिचय', nav_reviews: 'समीक्षाएं', nav_contact: 'संपर्क',
+      nav_home: 'होम', nav_about: 'परिचय', nav_services: 'सेवाएं', nav_reviews: 'समीक्षाएं', nav_contact: 'संपर्क',
+      skip_link: 'मुख्य सामग्री पर जाएं',
       hero_badge: 'रेड बुक एक्सपर्ट', hero_title_sub: 'ज्योतिषी',
       hero_desc: '1000+ सफल केसों के साथ एक विश्वसनीय ज्योतिषीय समाधान। आपकी हर समस्या का समाधान रेड बुक के माध्यम से।',
       stat_cases: 'केस सॉल्व', stat_clients: 'संतुष्ट ग्राहक', stat_years: 'साल का अनुभव',
@@ -82,7 +83,8 @@
       footer_rights: 'सर्वाधिकार सुरक्षित।'
     },
     en: {
-      nav_home: 'Home', nav_about: 'About', nav_reviews: 'Reviews', nav_contact: 'Contact',
+      nav_home: 'Home', nav_about: 'About', nav_services: 'Services', nav_reviews: 'Reviews', nav_contact: 'Contact',
+      skip_link: 'Skip to main content',
       hero_badge: 'Red Book Expert', hero_title_sub: 'Astrologer',
       hero_desc: 'A trusted astrological solution with 1000+ successful cases. Your every problem solved through the Red Book.',
       stat_cases: 'Cases Solved', stat_clients: 'Happy Clients', stat_years: 'Years Experience',
@@ -120,11 +122,12 @@
     const toggleBtn = document.getElementById('langToggle');
     toggleBtn.textContent = lang === 'hi' ? 'EN' : 'हि';
     toggleBtn.title = lang === 'hi' ? 'English' : 'हिंदी';
+    toggleBtn.setAttribute('aria-label', lang === 'hi' ? 'Switch to English' : 'हिंदी में बदलें');
     renderReviews();
   }
 
   function renderStars(count) {
-    return '<i class="fas fa-star"></i>'.repeat(count);
+    return '<i class="fas fa-star" aria-hidden="true"></i>'.repeat(count);
   }
 
   function renderReviews() {
@@ -139,36 +142,38 @@
       const name = currentLang === 'hi' && r.nameHi ? r.nameHi : r.name;
       const text = currentLang === 'hi' && r.textHi ? r.textHi : r.text;
       const initial = (r.nameHi || r.name).charAt(0);
-      return `
-        <div class="review-card">
-          <div class="review-header">
-            <div class="review-avatar">${initial}</div>
-            <div>
-              <div class="review-name">${name}</div>
-              <div class="review-stars">${renderStars(r.stars)}</div>
-            </div>
+      return `<article class="review-card" role="listitem">
+        <div class="review-header">
+          <div class="review-avatar" aria-hidden="true">${initial}</div>
+          <div>
+            <div class="review-name">${name}</div>
+            <div class="review-stars" aria-label="${r.stars} stars">${renderStars(r.stars)}</div>
           </div>
-          <div class="review-text">${text}</div>
         </div>
-      `;
+        <div class="review-text">${text}</div>
+      </article>`;
     }).join('');
 
-    pagination.innerHTML = Array.from({ length: totalPages }, (_, i) => `
-      <button class="page-btn ${i + 1 === currentPage ? 'active' : ''}" data-page="${i + 1}">${i + 1}</button>
-    `).join('');
+    pagination.innerHTML = Array.from({ length: totalPages }, (_, i) =>
+      `<button class="page-btn ${i + 1 === currentPage ? 'active' : ''}" data-page="${i + 1}" aria-label="${currentLang === 'hi' ? 'पेज' : 'Page'} ${i + 1}" ${i + 1 === currentPage ? 'aria-current="page"' : ''}>${i + 1}</button>`
+    ).join('');
 
-    pagination.querySelectorAll('.page-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        currentPage = parseInt(this.dataset.page);
-        renderReviews();
-        document.getElementById('reviews').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+    pagination.addEventListener('click', function (e) {
+      const btn = e.target.closest('.page-btn');
+      if (!btn) return;
+      currentPage = parseInt(btn.dataset.page);
+      renderReviews();
+      document.getElementById('reviews').scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 
   function createParticles() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
     const canvas = document.createElement('canvas');
     const bg = document.getElementById('particles-bg');
+    if (!bg) return;
     bg.appendChild(canvas);
     const ctx = canvas.getContext('2d');
     let w, h, particles = [];
@@ -183,12 +188,9 @@
       const count = Math.min(Math.floor(w * h / 12000), 80);
       for (let i = 0; i < count; i++) {
         particles.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          r: Math.random() * 2 + 0.5,
-          a: Math.random() * 0.4 + 0.1
+          x: Math.random() * w, y: Math.random() * h,
+          vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+          r: Math.random() * 2 + 0.5, a: Math.random() * 0.4 + 0.1
         });
       }
     }
@@ -196,18 +198,14 @@
     function draw() {
       ctx.clearRect(0, 0, w, h);
       particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0) p.x = w;
-        if (p.x > w) p.x = 0;
-        if (p.y < 0) p.y = h;
-        if (p.y > h) p.y = 0;
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = w; if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(59, 130, 246, ${p.a})`;
         ctx.fill();
       });
-      // Draw connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -226,27 +224,24 @@
     }
 
     window.addEventListener('resize', () => { resize(); initParticles(); });
-    resize();
-    initParticles();
-    draw();
+    resize(); initParticles(); draw();
   }
 
   function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count);
-          let current = 0;
-          const step = Math.ceil(target / 60);
-          const timer = setInterval(() => {
-            current += step;
-            if (current >= target) { current = target; clearInterval(timer); }
-            el.textContent = current;
-          }, 25);
-          observer.unobserve(el);
-        }
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count);
+        let current = 0;
+        const step = Math.ceil(target / 60);
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = current;
+        }, 25);
+        observer.unobserve(el);
       });
     }, { threshold: 0.5 });
     counters.forEach(c => observer.observe(c));
@@ -256,35 +251,42 @@
     const navbar = document.getElementById('navbar');
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
+    const body = document.body;
 
+    let lastScroll = 0;
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
+      const currentScroll = window.scrollY;
+      navbar.classList.toggle('scrolled', currentScroll > 50);
+      lastScroll = currentScroll;
+    }, { passive: true });
 
     toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
       toggle.classList.toggle('open');
-      links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      body.style.overflow = open ? 'hidden' : '';
     });
 
     links.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        toggle.classList.remove('open');
         links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
       });
     });
 
-    // Active link tracking
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(s => {
-        const top = s.offsetTop - 100;
+        const top = s.offsetTop - 120;
         if (window.scrollY >= top) current = s.id;
       });
       links.querySelectorAll('a').forEach(a => {
         a.classList.toggle('active', a.getAttribute('href') === '#' + current);
       });
-    });
+    }, { passive: true });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -293,8 +295,7 @@
     initNavbar();
 
     document.getElementById('langToggle').addEventListener('click', function () {
-      const newLang = currentLang === 'hi' ? 'en' : 'hi';
-      applyLanguage(newLang);
+      applyLanguage(currentLang === 'hi' ? 'en' : 'hi');
     });
 
     applyLanguage('hi');

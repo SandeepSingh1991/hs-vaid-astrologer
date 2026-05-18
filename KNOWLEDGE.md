@@ -1,7 +1,7 @@
 # Project Knowledge Base - HS Vaid Website
 
 ## Project Overview
-Astrologer landing page for HS Vaid (Red Book Expert)
+Mobile-friendly web app / landing page for HS Vaid (Red Book Expert)
 Location: Ludhiana, Punjab, India
 
 ## Business Details
@@ -15,51 +15,72 @@ Location: Ludhiana, Punjab, India
 - **Client Reviews**: 50+ (paginated, 5 per page)
 
 ## Design System
-- **Skill**: Futuristic (from typeui.sh registry)
-- **Fonts**: Audiowide (headings), Roboto (body), Anonymous Pro (mono)
-- **Colors**: Primary #3B82F6, Secondary #8B5CF6, Success #16A34A, Warning #D97706, Danger #DC2626
+- **Skill**: Futuristic (from typeui.sh registry) — see `.opencode/skills/design-system/SKILL.md`
+- **Fonts**: Audiowide (display/headings), Roboto (body), Anonymous Pro (mono)
+- **Colors**: Primary #3B82F6, Secondary #8B5CF6, Success #16A34A, Warning #D97706, Danger #DC2626, Surface #FFFFFF, Text #111827
+- **Spacing scale**: 4/8/12/16/24/32 (tokenized as --space-*)
+- **Radius**: 4px/8px/12px/16px/100px (tokenized as --radius-*)
 
 ## Tech Stack
-- Pure HTML + CSS + JavaScript (static site)
+- Pure HTML + CSS + JavaScript (static site, no build step)
 - Font Awesome 6.5 for icons
 - Google Fonts (Audiowide, Roboto, Anonymous Pro)
+- Progressive Web App (manifest.json + sw.js for offline support)
 - Netlify-ready static files
+- WCAG 2.2 AA accessibility (focus-visible states, semantic HTML, skip link)
 
 ## Features
-- Bilingual (Hindi/English) toggle
-- Particle animation background
-- Animated stat counters
-- Paginated reviews (5 per box/page)
-- Fully responsive
-- WhatsApp & Phone CTA buttons
+- Bilingual (Hindi/English) toggle with all labels translated
+- Interactive particle animation background (respects prefers-reduced-motion)
+- Animated stat counters (IntersectionObserver-based)
+- Paginated reviews — 5 per box/page, 11 pages total (51 reviews)
+- Fully responsive mobile-first design (100dvh, safe areas)
+- Touch-friendly with proper tap targets
+- WhatsApp & Phone FAB buttons on mobile
+- Keyboard-accessible navigation (focus-visible, aria-* attributes)
+- Service worker for offline caching
+- PWA manifest for "Add to Home Screen"
 
 ## Deployment
 - **Platform**: Netlify (static site, no build step)
-- **GitHub**: https://github.com/sandeepsingh1991/hs-vaid-astrologer
+  - Publish directory: `.` (root)
+  - No build command required
+- **GitHub**: https://github.com/SandeepSingh1991/hs-vaid-astrologer
 - **Domain**: Configure via Netlify custom domain
 
 ## File Structure
 ```
 /
-├── index.html          # Main landing page
-├── styles.css          # All styles
-├── scripts.js          # All JS (reviews, language, particles, etc.)
-├── netlify.toml        # Netlify deployment config
-├── DESIGN.md           # Futuristic design tokens
+├── index.html          # Main landing page (semantic HTML5, ARIA labels)
+├── styles.css          # All styles (SKILL.md design tokens, responsive)
+├── scripts.js          # All JS (reviews, language, particles, counters, nav)
+├── manifest.json       # PWA manifest
+├── sw.js              # Service worker (offline caching)
+├── netlify.toml       # Netlify deployment config
+├── DESIGN.md           # Futuristic design tokens (from typeui.sh)
 └── .opencode/
     └── skills/
         └── design-system/
-            └── SKILL.md
+            └── SKILL.md  # Futuristic design system rules
 ```
 
 ## Commands Reference
 ```bash
-# Preview locally (if python available)
+# Preview locally
 python -m http.server 8000
+# OR
+npx serve .
 
-# Or with npx live-server
-npx live-server
-
-# Deploy to Netlify CLI
-npx netlify deploy --prod
+# Git push
+git add -A && git commit -m "message" && git push
 ```
+
+## Design Tokens (CSS Custom Properties)
+Located in `styles.css :root`:
+- `--primary`, `--primary-dark`, `--primary-light`, `--primary-glow`
+- `--secondary`, `--secondary-dark`, `--secondary-glow`
+- `--success`, `--warning`, `--danger`, `--surface`, `--text`, `--text-muted`
+- `--bg-dark`, `--bg-card`, `--bg-card-hover`
+- `--border`, `--border-hover`, `--focus-ring`
+- `--space-{4,8,12,16,24,32}`, `--radius-{sm,md,lg,xl,full}`
+- `--ease` (transition cubic-bezier)
