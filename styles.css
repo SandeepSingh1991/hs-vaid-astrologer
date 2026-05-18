@@ -102,11 +102,7 @@ ul{list-style:none}
   position:absolute;inset:0;pointer-events:none;overflow:hidden;
   background:linear-gradient(160deg,var(--dark) 0%,#0D0B08 40%,var(--dark) 80%)
 }
-.hero-bg::after{
-  content:'';position:absolute;inset:0;
-  background-image:url('backdrop.png');background-size:cover;background-position:center;
-  opacity:.06;mix-blend-mode:screen;pointer-events:none
-}
+
 .hero-dot{
   position:absolute;width:3px;height:3px;border-radius:50%;
   background:var(--gold);opacity:.4;box-shadow:0 0 8px var(--gold)
@@ -167,21 +163,23 @@ ul{list-style:none}
 /* Hero Brand Panel */
 .hero-brand{display:flex;align-items:center;justify-content:center}
 .hero-brand-inner{
-  text-align:center;border:1px solid rgba(212,168,83,.12);
-  padding:40px 36px;position:relative;overflow:hidden
-}
-.hero-brand-inner::after{
-  content:'';position:absolute;inset:0;z-index:-1;
+  text-align:center;position:relative;overflow:hidden;
   background-image:url('backdrop.png');background-size:cover;background-position:center;
-  opacity:.08;mix-blend-mode:luminosity
+  min-height:360px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:32px 28px;
+  border:1px solid rgba(212,168,83,.2);
+  box-shadow:0 0 30px rgba(212,168,83,.08),inset 0 0 40px rgba(0,0,0,.3)
 }
-.hero-brand-inner::before,.hero-brand-inner::after{
-  content:'';position:absolute;width:8px;height:8px;
-  border-color:var(--gold);border-style:solid
+.hero-brand-inner::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 25%,rgba(10,10,10,.85) 100%);
+  pointer-events:none
 }
-.hero-brand-inner::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
-.hero-brand-inner::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
-.hero-brand-rudraksh{width:44px;height:66px;display:block;margin:0 auto 12px;filter:drop-shadow(0 2px 12px rgba(212,168,83,.1))}
+.hero-brand-corner{position:absolute;width:10px;height:10px;border-color:var(--gold);border-style:solid;z-index:2}
+.hero-brand-corner-tl{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.hero-brand-corner-br{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.hero-brand-content{position:relative;z-index:1}
+.hero-brand-rudraksh{width:44px;height:66px;display:block;margin:0 auto 12px;filter:drop-shadow(0 2px 16px rgba(212,168,83,.2))}
 .hero-brand-star{display:block;font-size:3rem;color:var(--gold);opacity:.25;margin-bottom:12px;line-height:1}
 .hero-brand-line{display:block;width:30px;height:1px;background:var(--gold);margin:12px auto;opacity:.2}
 .hero-brand-tag{
@@ -247,11 +245,7 @@ ul{list-style:none}
 .services{
   position:relative;z-index:1;padding:100px 0
 }
-.services::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:url('backdrop.png');background-size:cover;background-position:center;
-  opacity:.04;mix-blend-mode:screen
-}
+
 .services-head{max-width:1200px;margin:0 auto 48px;padding:0 24px}
 .srv-grid{
   max-width:1200px;margin:0 auto;padding:0 24px;
@@ -329,11 +323,7 @@ ul{list-style:none}
 .contact-strip{
   background:var(--gold);padding:28px 0;text-align:center;position:relative;overflow:hidden
 }
-.contact-strip::after{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:url('backdrop.png');background-size:cover;background-position:center;
-  opacity:.08;mix-blend-mode:overlay
-}
+
 .contact-strip-inner{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 .contact-strip-lbl{
   display:block;font-family:var(--font-mono);font-size:.7rem;
@@ -368,11 +358,7 @@ ul{list-style:none}
   background:var(--dark-2);border:1px solid rgba(255,255,255,.06);
   padding:32px;text-align:center;position:relative;overflow:hidden
 }
-.cta-box::after{
-  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:url('backdrop.png');background-size:cover;background-position:center;
-  opacity:.06;mix-blend-mode:luminosity
-}
+
 .cta-box::before{
   content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
   background:radial-gradient(circle at center,var(--gold-glow),transparent 60%);
