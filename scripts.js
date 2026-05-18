@@ -219,7 +219,7 @@
   }
 
   function initRvlTags() {
-    document.querySelectorAll('.tag, .ttl, .about-txt, .about-feats, .srv-card, .hero-label, .hero-title, .hero-sub, .hero-stats, .hero-acts, .contact-item, .cta-box, .contact-strip-inner').forEach(el => {
+    document.querySelectorAll('.tag, .ttl, .about-txt, .about-feats, .srv-card, .hero-label, .hero-title, .hero-sub, .hero-stats, .hero-acts, .hero-brand-inner, .contact-item, .cta-box, .contact-strip-inner').forEach(el => {
       if (!el.classList.contains('rvl')) el.classList.add('rvl');
     });
   }
