@@ -99,8 +99,17 @@ ul{list-style:none}
   padding:120px 0 60px;overflow:hidden
 }
 .hero-bg{
-  position:absolute;inset:0;pointer-events:none;overflow:hidden;
-  background:linear-gradient(160deg,var(--dark) 0%,#0D0B08 40%,var(--dark) 80%)
+  position:absolute;inset:0;pointer-events:none;overflow:hidden
+}
+.hero-bg::before{
+  content:'';position:absolute;inset:0;
+  background-image:url('backdrop.png');background-size:cover;background-position:center;
+  filter:brightness(.6)
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(10,10,10,.85) 0%,rgba(10,10,10,.5) 50%,rgba(10,10,10,.85) 100%);
+  pointer-events:none
 }
 
 .hero-dot{
@@ -164,7 +173,7 @@ ul{list-style:none}
 .hero-brand{display:flex;width:100%}
 .hero-brand-inner{
   text-align:center;position:relative;overflow:hidden;width:100%;
-  background-image:url('backdrop.png');background-size:cover;background-position:center;
+  background:rgba(10,10,10,.55);backdrop-filter:blur(2px);
   min-height:520px;display:flex;flex-direction:column;align-items:center;
   justify-content:center;padding:48px 36px;
   border:1px solid rgba(212,168,83,.2);
