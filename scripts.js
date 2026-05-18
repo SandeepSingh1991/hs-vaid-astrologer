@@ -58,50 +58,50 @@
 
   const TRANS = {
     hi: {
-      skip:'मुख्य सामग्री पर जाएं',nav_home:'होम',nav_about:'परिचय',nav_services:'सेवाएं',
-      nav_reviews:'समीक्षाएं',nav_contact:'संपर्क',
-      hero_label:'/ रेड बुक एक्सपर्ट',hero_sub:'आपकी हर समस्या का समाधान',
-      hstat_cases:'केस सॉल्व',hstat_years:'साल अनुभव',
-      call:'कॉल करें',wa:'व्हाट्सएप',
-      about_tag:'परिचय',about_ttl:'सालों का अनुभव<br>आपकी सेवा में',
-      about_txt:'HS Vaid एक प्रसिद्ध रेड बुक एक्सपर्ट हैं जिन्होंने 1000 से अधिक लोगों की जीवन समस्याओं का समाधान किया है। प्राचीन रेड बुक विधा के विशेषज्ञ, सटीक भविष्यवाणी और प्रभावी समाधान के लिए जाने जाते हैं।',
-      afeat1:'100% गोपनीय',afeat2:'सटीक भविष्यवाणी',afeat3:'प्रभावी उपाय',
-      srv_tag:'सेवाएं',srv_ttl:'हमारी विशेष सेवाएं',
-      srv1:'प्रेम संबंधी समस्याएं',srv1d:'प्रेम जीवन में आ रही बाधाओं का समाधान।',
-      srv2:'वैवाहिक जीवन समाधान',srv2d:'पति-पत्नी के रिश्ते में सुधार और खुशहाली।',
-      srv3:'करियर एवं व्यापार',srv3d:'नौकरी और व्यवसाय में सफलता के उपाय।',
-      srv4:'शिक्षा एवं परीक्षा',srv4d:'पढ़ाई में मन लगाने और सफलता के उपाय।',
-      srv5:'गृह क्लेश समाधान',srv5d:'परिवार में शांति और सद्भाव के उपाय।',
-      srv6:'आर्थिक समस्याएं',srv6d:'कर्ज और आर्थिक परेशानियों का स्थायी समाधान।',
-      rev_tag:'समीक्षाएं',rev_ttl:'ग्राहक क्या कहते हैं',
-      call_now_label:'तुरंत संपर्क करें',
-      addr_lbl:'पता',ph_lbl:'फोन / WhatsApp',time_lbl:'समय',
-      time_val:'सुबह 11 बजे – शाम 6 बजे (सभी दिन)',time_note:'WhatsApp 24x7 उपलब्ध',
-      cta_ttl:'अभी कॉल करें',cta_txt:'समस्या का समाधान पाने में देर न करें।',
-      foot_tag:'आपकी समस्या, हमारा समाधान।',foot_rights:'सर्वाधिकार सुरक्षित।'
+      skip:'Skip to main content | मुख्य सामग्री पर जाएं',nav_home:'Home | होम',nav_about:'About | परिचय',nav_services:'Services | सेवाएं',
+      nav_reviews:'Reviews | समीक्षाएं',nav_contact:'Contact | संपर्क',
+      hero_label:'Red Book Expert | ज्योतिषी Acharya',hero_sub:'1,000+ Successful Cases<br>आपकी हर समस्या का समाधान',
+      hstat_cases:'Cases Solved | केस सॉल्व',hstat_years:'Years | साल अनुभव',
+      call:'Call Now | कॉल करें',wa:'WhatsApp',
+      about_tag:'About | परिचय',about_ttl:'15+ Years Experience<br>आपकी सेवा में',
+      about_txt:'Red Book Expert Archarya HS Vaid — 1,000+ successful cases solve kiye hain. Ancient Red Book techniques mein mahir, accurate predictions aur effective remedies ke liye jaane jaate hain. Aapki har samasya ka samadhan, chahe woh prem ho, vaivahik, career, ya aarthik.',
+      afeat1:'100% Confidential | गोपनीय',afeat2:'Accurate Predictions | सटीक',afeat3:'Effective Remedies | प्रभावी उपाय',
+      srv_tag:'Services | सेवाएं',srv_ttl:'Our Special Services | हमारी सेवाएं',
+      srv1:'Love Problems | प्रेम संबंधी',srv1d:'Prem jeevan mein aa rahi badhaon ka samadhan.',
+      srv2:'Marriage | वैवाहिक जीवन',srv2d:'Pati-patni ke rishte mein sudhaar aur khushhali.',
+      srv3:'Career & Business',srv3d:'Naukri aur vyapar mein safalta ke upay.',
+      srv4:'Education | शिक्षा',srv4d:'Padhai mein safalta ke liye effective upay.',
+      srv5:'Family | पारिवारिक',srv5d:'Parivar mein shanti aur sadbhav ke upay.',
+      srv6:'Financial | आर्थिक',srv6d:'Karj aur aarthik pareshaniyon ka sthaayi samadhan.',
+      rev_tag:'Reviews | समीक्षाएं',rev_ttl:'Client Reviews | ग्राहक समीक्षाएं',
+      call_now_label:'Contact Now | तुरंत संपर्क करें',
+      addr_lbl:'Address | पता',ph_lbl:'Phone / WhatsApp',time_lbl:'Hours | समय',
+      time_val:'11 AM – 6 PM (All Days) | सुबह 11 बजे – शाम 6 बजे',time_note:'WhatsApp 24x7 Available | हर समय उपलब्ध',
+      cta_ttl:'Call Now | अभी कॉल करें',cta_txt:"Don't wait — apni samasya ka samadhan aaj hi paayein.",
+      foot_tag:'Your Problem, Our Solution | आपकी समस्या, हमारा समाधान',foot_rights:'All Rights Reserved | सर्वाधिकार सुरक्षित'
     },
     en: {
       skip:'Skip to main content',nav_home:'Home',nav_about:'About',nav_services:'Services',
       nav_reviews:'Reviews',nav_contact:'Contact',
-      hero_label:'/ Red Book Expert',hero_sub:'Solution for every problem',
+      hero_label:'Red Book Expert | Astrologer HS Vaid',hero_sub:'1,000+ Successful Cases<br>Every problem has a solution',
       hstat_cases:'Cases Solved',hstat_years:'Years Experience',
       call:'Call Now',wa:'WhatsApp',
-      about_tag:'About',about_ttl:'Years of Experience<br>At Your Service',
-      about_txt:'HS Vaid is a renowned Red Book Expert who has solved life problems of over 1000 people. An expert in ancient Red Book techniques, known for accurate predictions and effective solutions.',
+      about_tag:'About',about_ttl:'15+ Years Experience<br>At Your Service',
+      about_txt:'Red Book Expert HS Vaid has solved 1,000+ life problems using ancient Red Book techniques. Known for accurate predictions and effective remedies — whether it\'s love, marriage, career, or financial issues.',
       afeat1:'100% Confidential',afeat2:'Accurate Predictions',afeat3:'Effective Remedies',
       srv_tag:'Services',srv_ttl:'Our Special Services',
-      srv1:'Love Problems',srv1d:'Solutions for obstacles in love life.',
-      srv2:'Marriage Solutions',srv2d:'Improving husband-wife relationships.',
-      srv3:'Career & Business',srv3d:'Success in job and business.',
-      srv4:'Education & Exams',srv4d:'Focus and success in studies.',
-      srv5:'Family Disputes',srv5d:'Peace and harmony in the family.',
-      srv6:'Financial Issues',srv6d:'Permanent solution for debts.',
-      rev_tag:'Reviews',rev_ttl:'What Clients Say',
+      srv1:'Love Problems',srv1d:'Solutions for obstacles in love and relationships.',
+      srv2:'Marriage Solutions',srv2d:'Restore peace and happiness in married life.',
+      srv3:'Career & Business',srv3d:'Success in job and business ventures.',
+      srv4:'Education & Exams',srv4d:'Focus and success in studies and exams.',
+      srv5:'Family Disputes',srv5d:'Peace and harmony in family relationships.',
+      srv6:'Financial Issues',srv6d:'Permanent relief from debts and financial stress.',
+      rev_tag:'Reviews',rev_ttl:'Client Reviews',
       call_now_label:'Contact Now',
       addr_lbl:'Address',ph_lbl:'Phone / WhatsApp',time_lbl:'Hours',
       time_val:'11 AM – 6 PM (All Days)',time_note:'WhatsApp 24x7 Available',
-      cta_ttl:'Call Now',cta_txt:'Don\'t delay in finding your solution.',
-      foot_tag:'Your problem, our solution.',foot_rights:'All Rights Reserved.'
+      cta_ttl:'Call Now',cta_txt:"Don't wait — get your solution today.",
+      foot_tag:'Your Problem, Our Solution',foot_rights:'All Rights Reserved.'
     }
   };
 
@@ -219,7 +219,7 @@
   }
 
   function initRvlTags() {
-    document.querySelectorAll('.tag, .ttl, .about-txt, .about-feats, .srv-card, .hero-label, .hero-title, .hero-sub, .hero-stats, .hero-acts, .hero-brand-inner, .contact-item, .cta-box, .contact-strip-inner').forEach(el => {
+    document.querySelectorAll('.tag, .ttl, .about-txt, .about-feats, .srv-card, .hero-label, .hero-title, .hero-sub, .hero-stats, .hero-acts, .contact-item, .cta-box, .contact-strip-inner').forEach(el => {
       if (!el.classList.contains('rvl')) el.classList.add('rvl');
     });
   }
